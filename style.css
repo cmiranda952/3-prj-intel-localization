@@ -1,0 +1,271 @@
+/* Basic page styling */
+body {
+  background-color: rgb(245, 245, 245);
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+/* Hero/Header Section */
+header {
+  /* Intel-inspired blue gradient background */
+  background: linear-gradient(135deg, #0071C5 0%, #003D7A 100%);
+  
+  /* Center all text content */
+  text-align: center;
+  
+  /* Add spacing inside the header */
+  padding: 60px 20px;
+  
+  /* White text color for contrast */
+  color: white;
+}
+
+/* Style the Intel logo */
+header img {
+  /* Resize the logo */
+  width: 120px;
+  height: auto;
+  
+  /* Add space below the logo */
+  margin-bottom: 20px;
+}
+
+/* Style the main heading */
+header h1 {
+  /* Larger text for the main title */
+  font-size: 3em;
+  
+  /* Remove default margins */
+  margin: 20px 0;
+  
+  /* Make the text bold */
+  font-weight: bold;
+}
+
+/* Style the subheading paragraph */
+header p {
+  /* Slightly larger than normal text */
+  font-size: 1.2em;
+  
+  /* Limit the width for better readability */
+  max-width: 700px;
+  
+  /* Center the paragraph */
+  margin: 20px auto;
+  
+  /* Add spacing between lines */
+  line-height: 1.6;
+}
+
+/* Timeline Cards Section */
+section {
+  /* Display cards in a row */
+  display: flex;
+  
+  /* Enable horizontal scrolling */
+  overflow-x: scroll;
+  
+  /* Add space around the section - extra space on left for first card */
+  padding: 40px 20px 40px 40px;
+  
+  /* Add space between cards */
+  gap: 20px;
+  
+  /* Limit the width to show exactly 4 full cards */
+  /* 4 cards (200px each) + 3 gaps (20px each) + padding (40px left + 20px right) = 920px */
+  max-width: 960px;
+  
+  /* Center the section */
+  margin: 0 auto;
+  
+  /* Enable scroll snapping (locking) */
+  scroll-snap-type: x mandatory;
+  
+  /* Smooth scrolling behavior */
+  scroll-behavior: smooth;
+}
+
+/* Individual Timeline Cards */
+section > div {
+  /* Set width for each card (smaller and square) */
+  min-width: 200px;
+  max-width: 200px;
+  
+  /* Set height to make cards square-like */
+  /*min-height: 200px;*/
+  
+  /* Prevent cards from shrinking */
+  flex-shrink: 0;
+  
+  /* Add white background */
+  background-color: white;
+  
+  /* Add rounded corners */
+  border-radius: 8px;
+  
+  /* Add shadow for depth */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  
+  /* Add padding inside each card */
+  padding: 20px;
+  
+  /* Snap cards to the start position when scrolling */
+  scroll-snap-align: start;
+  
+  /* Add cursor pointer on hover */
+  cursor: pointer;
+  
+  /* Enable positioning for absolutely positioned children */
+  position: relative;
+}
+
+/* Style images inside cards */
+section > div img {
+  /* Make images responsive */
+  width: 100%;
+  height: auto;
+  
+  /* Limit image height */
+  max-height: 100px;
+  
+  /* Add space below the image */
+  margin-bottom: 0px;
+  
+  /* Make images display as block */
+  display: block;
+  
+  /* Add rounded corners to match cards */
+  border-radius: 4px;
+}
+
+/* Style the year heading */
+section > div h2 {
+  /* Intel blue color for the year */
+  color: #0071C5;
+  
+  /* Smaller text for the year */
+  font-size: 1.5em;
+  
+  /* Remove default margin */
+  margin: 0 0 8px 0;
+}
+
+/* Style the event title */
+section > div h3 {
+  /* Darker text color */
+  color: #333;
+  
+  /* Smaller text size */
+  font-size: 1.1em;
+  
+  /* Less margin */
+  margin: 0 0 10px 0;
+}
+
+/* Style the card description */
+section > div p {
+  /* Gray text for description */
+  color: #fff;
+  
+  /* Smaller text size */
+  font-size: 0.9em;
+  
+  /* Add line spacing for readability */
+  line-height: 1.4;
+  
+  /* Position absolutely to overlay the card */
+  position: absolute;
+  
+  /* Cover the entire card */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  /* Add transparent blue background */
+  background-color: rgba(0, 113, 197, 0.85);
+  
+  /* Match card rounded corners */
+  border-radius: 8px;
+  
+  /* Add padding for content spacing */
+  padding: 20px;
+  
+  /* Center content vertically and horizontally */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Hide by default */
+  opacity: 0;
+  
+  /* Smooth transition on hover */
+  transition: opacity 0.3s ease;
+  
+  /* Remove default margins */
+  margin: 0;
+}
+
+/* Show text on card hover */
+section > div:hover p {
+  /* Make content visible on hover */
+  opacity: 1;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  
+  /* Make hero text smaller on mobile */
+  header h1 {
+    /* Reduce title size for mobile */
+    font-size: 2em;
+  }
+  
+  header p {
+    /* Reduce paragraph size for mobile */
+    font-size: 1em;
+  }
+  
+  /* Change from horizontal to vertical scroll */
+  section {
+    /* Stack cards vertically */
+    flex-direction: column;
+    
+    /* Remove horizontal scroll */
+    overflow-x: visible;
+    
+    /* Allow vertical scrolling if needed */
+    overflow-y: visible;
+    
+    /* Disable scroll snapping for vertical layout */
+    scroll-snap-type: none;
+    
+    /* Remove max-width to use full width */
+    max-width: 100%;
+    
+    /* Adjust padding for mobile */
+    padding: 20px;
+    
+    /* Center cards */
+    align-items: center;
+  }
+  
+  /* Make cards a set size on mobile */
+  section > div {
+    /* Set a maximum width for cards */
+    min-width: 280px;
+    max-width: 200px;
+    
+    /* Allow cards to adapt if screen is smaller */
+    width: 90%;
+    
+    /* Remove snap alignment */
+    scroll-snap-align: none;
+    
+    /* Add margin between stacked cards */
+    margin-bottom: 20px;
+  }
+  
+}
