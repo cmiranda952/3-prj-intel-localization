@@ -60,7 +60,7 @@ header p {
 }
 
 /* Timeline Cards Section */
-section {
+#timeline {
   /* Display cards in a row */
   display: flex;
   
@@ -88,7 +88,7 @@ section {
 }
 
 /* Individual Timeline Cards */
-section > div {
+#timeline > div {
   /* Set width for each card (smaller and square) */
   min-width: 200px;
   max-width: 200px;
@@ -122,7 +122,7 @@ section > div {
 }
 
 /* Style images inside cards */
-section > div img {
+#timeline > div img {
   /* Make images responsive */
   width: 100%;
   height: auto;
@@ -141,7 +141,7 @@ section > div img {
 }
 
 /* Style the year heading */
-section > div h2 {
+#timeline > div h2 {
   /* Intel blue color for the year */
   color: #0071C5;
   
@@ -153,7 +153,7 @@ section > div h2 {
 }
 
 /* Style the event title */
-section > div h3 {
+#timeline > div h3 {
   /* Darker text color */
   color: #333;
   
@@ -165,7 +165,7 @@ section > div h3 {
 }
 
 /* Style the card description */
-section > div p {
+#timeline > div p {
   /* Gray text for description */
   color: #fff;
   
@@ -209,7 +209,7 @@ section > div p {
 }
 
 /* Show text on card hover */
-section > div:hover p {
+#timeline > div:hover p {
   /* Make content visible on hover */
   opacity: 1;
 }
@@ -229,7 +229,7 @@ section > div:hover p {
   }
   
   /* Change from horizontal to vertical scroll */
-  section {
+  #timeline {
     /* Stack cards vertically */
     flex-direction: column;
     
@@ -253,7 +253,7 @@ section > div:hover p {
   }
   
   /* Make cards a set size on mobile */
-  section > div {
+  #timeline > div {
     /* Set a maximum width for cards */
     min-width: 280px;
     max-width: 200px;
